@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+    <key>CFBundleDisplayName</key><string>Суфлёр</string>
+    <key>CFBundleDevelopmentRegion</key><string>ru</string>
+    <key>CFBundleExecutable</key><string>$(EXECUTABLE_NAME)</string>
+    <key>CFBundleIdentifier</key><string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+    <key>CFBundleInfoDictionaryVersion</key><string>6.0</string>
+    <key>CFBundleName</key><string>$(PRODUCT_NAME)</string>
+    <key>CFBundlePackageType</key><string>APPL</string>
+    <key>CFBundleShortVersionString</key><string>$(MARKETING_VERSION)</string>
+    <key>CFBundleVersion</key><string>$(CURRENT_PROJECT_VERSION)</string>
+    <key>LSRequiresIPhoneOS</key><true/>
+    <key>NSCameraUsageDescription</key><string>Камера нужна, чтобы записывать видео, пока вы читаете текст суфлёра.</string>
+    <key>NSMicrophoneUsageDescription</key><string>Микрофон нужен, чтобы записывать ваш голос вместе с видео.</string>
+    <key>NSPhotoLibraryAddUsageDescription</key><string>Разрешите сохранять выбранные вами дубли в приложение «Фото».</string>
+    <key>UISupportedInterfaceOrientations</key><array><string>UIInterfaceOrientationPortrait</string></array>
+    <key>UIRequiredDeviceCapabilities</key><array><string>arm64</string></array>
+    <key>UIApplicationSceneManifest</key><dict><key>UIApplicationSupportsMultipleScenes</key><false/></dict>
+    <key>UILaunchScreen</key><dict/>
+    <key>ITSAppUsesNonExemptEncryption</key><false/>
+</dict></plist>
+
