@@ -54,7 +54,13 @@ struct EditorView: View {
         .onChange(of: script.text) { _, _ in scheduleSave() }
         .onChange(of: script.title) { _, _ in scheduleSave() }
         .onChange(of: scenePhase) { _, phase in if phase != .active { autosave?.cancel(); library.save() } }
-        .onDisappear { autosave?.cancel(); library.save() }
+        .onDisappear {
+            autosave?.cancel()
+            if script.title == "Новый текст" && script.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                library.context.delete(script)
+            }
+            library.save()
+        }
         .fullScreenCover(isPresented: $showingCamera) { RecordingView(script: script, library: library) }
     }
 

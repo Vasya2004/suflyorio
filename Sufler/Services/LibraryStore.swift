@@ -76,7 +76,17 @@ import SuflerCore
                 take.status = "unavailable"; take.note = "Файл видео отсутствует."
             }
             save()
+            purgeExpiredTakes()
         } catch { errorMessage = "Не удалось проверить сохранённые дубли: \(error.localizedDescription)" }
+    }
+
+    private static let takeLifetime: TimeInterval = 7 * 24 * 60 * 60
+
+    func purgeExpiredTakes() {
+        guard let expired = try? context.fetch(FetchDescriptor<Take>()).filter({
+            Date().timeIntervalSince($0.createdAt) > Self.takeLifetime
+        }) else { return }
+        for take in expired { deleteTake(take) }
     }
 
     func deleteTake(_ take: Take) {
