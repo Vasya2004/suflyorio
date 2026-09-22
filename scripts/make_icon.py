@@ -26,8 +26,8 @@ def generate() -> Image.Image:
         b = int(top[2] + (bottom[2] - top[2]) * t)
         draw.line([(0, y), (SIZE, y)], fill=(r, g, b))
 
-    frame_w = int(SIZE * 0.46)
-    frame_h = int(frame_w * 16 / 9)
+    frame_w = int(SIZE * 0.56)
+    frame_h = int(frame_w * 1.35)
     frame_x0 = (SIZE - frame_w) // 2
     frame_y0 = (SIZE - frame_h) // 2 - int(SIZE * 0.02)
     frame_x1 = frame_x0 + frame_w
@@ -44,7 +44,7 @@ def generate() -> Image.Image:
     gap = int(SIZE * 0.050)
     widths = [0.62, 0.78, 0.50, 0.70, 0.40]
     cx = (frame_x0 + frame_x1) // 2
-    start_y = frame_y0 + int(frame_h * 0.20)
+    start_y = frame_y0 + int(frame_h * 0.17)
     for i, wfrac in enumerate(widths):
         lw = int(frame_w * wfrac * 0.8)
         y0 = start_y + i * gap
@@ -55,10 +55,10 @@ def generate() -> Image.Image:
         col = tuple(int(c * alpha_fade) for c in line_color)
         draw.rounded_rectangle([x0, y0, x1, y1], radius=line_h // 2, fill=col)
 
-    dot_r = int(SIZE * 0.125)
-    dot_cx = frame_x1 - int(SIZE * 0.005)
-    dot_cy = frame_y1 - int(SIZE * 0.015)
-    ring_pad = int(SIZE * 0.016)
+    dot_r = int(SIZE * 0.055)
+    dot_cx = cx
+    dot_cy = frame_y1 - int(SIZE * 0.16)
+    ring_pad = int(SIZE * 0.010)
     draw.ellipse(
         [dot_cx - dot_r - ring_pad, dot_cy - dot_r - ring_pad,
          dot_cx + dot_r + ring_pad, dot_cy + dot_r + ring_pad],
