@@ -68,7 +68,7 @@ python3 scripts/validate_project.py
 
 ```sh
 python3 scripts/generate_project.py
-swift scripts/make_icon.swift Sufler/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon.png
+python3 scripts/make_icon.py Sufler/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon.png
 ```
 
 Исходная структура и обработка сбоев описаны в [архитектуре](docs/ARCHITECTURE.md).
