@@ -17,7 +17,14 @@ struct WideButton: View {
     var action: () -> Void
     var body: some View {
         Button(action: action) {
-            Label(title, systemImage: icon).font(.headline).frame(maxWidth: .infinity).padding(.vertical, 10)
+            HStack {
+                Spacer(minLength: 0)
+                HStack(spacing: 8) {
+                    Image(systemName: icon)
+                    Text(title)
+                }.font(.headline)
+                Spacer(minLength: 0)
+            }.padding(.vertical, 10)
         }
         .buttonStyle(.borderedProminent).buttonBorderShape(.roundedRectangle(radius: 18))
     }
